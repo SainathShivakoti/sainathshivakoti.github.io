@@ -356,19 +356,19 @@ body:not(.user-is-tabbing) a:focus {
     margin-right: var(--gutter-medium);
 }
 
-@media(max-width: 500px) {
+@media (max-width: 500px) {
     .nav {
         justify-content: center;
     }
 }
 
-@media(max-width: 400px) {
+@media (max-width: 400px) {
     .nav__item:not(:last-child) {
         margin-right: var(--gutter-normal);
     }
 }
 
-@media(max-width: 300px) {
+@media (max-width: 300px) {
     .nav {
         font-size: var(--font-size-small);
     }
@@ -380,7 +380,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: 1rem 0;
     text-decoration: none;
     color: inherit;
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
 .nav__link::after {
@@ -520,22 +520,11 @@ body:not(.user-is-tabbing) a:focus {
     object-fit: contain;
     flex-shrink: 0;
     margin-right: var(--gutter-medium);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 0.5rem;
     padding: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-
-/*
-.company__logos {
-    display: flex;
-    align-items: center;
-    gap: var(--gutter-medium);
-    overflow: hidden;
-    position: relative;
-    height: 6.5rem;
-}
-*/
 
 .marquee {
     display: flex;
