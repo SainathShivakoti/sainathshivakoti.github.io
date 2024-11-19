@@ -3,106 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Sai Nath Chary Shivakoti, a Software Engineer with expertise in Java, Python, Automation Testing, and Data Analysis.">
     <title>Sai Nath Chary Shivakoti - Portfolio</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file here -->
 </head>
 <body>
     <!-- Header Section -->
-    <header class="header">
-        <div class="header__text">
-            <h1 class="heading-primary">Sai Nath Chary Shivakoti</h1>
+    <header>
+        <div class="container">
+            <div class="profile-photo">
+                <!-- Add your photo here -->
+                <img src="placeholder-profile.jpg" alt="Sai Nath Chary Shivakoti">
+            </div>
+            <h1>Sai Nath Chary Shivakoti</h1>
             <p>Software Engineer | Data Analyst | Innovator</p>
-            <a href="#contact" class="btn btn--pink">Get in Touch</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <ul class="nav__items">
-            <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-            <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
-            <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-            <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-        </ul>
-    </nav>
-
     <!-- About Section -->
     <section id="about">
-        <div class="row">
+        <div class="container">
             <h2>About Me</h2>
-            <p>I am a passionate Software Engineer with over 3 years of experience in development, testing, and data analysis. Skilled in Java, Python, and automation frameworks, I thrive in building high-quality solutions and optimizing workflows. Currently pursuing my MSc in Advanced Computer Science from the University of Hertfordshire.</p>
+            <p>
+                I am a passionate Software Engineer with over 3 years of experience in software development, testing, 
+                and data analysis. Skilled in Java, Python, and automation frameworks, I thrive in building high-quality 
+                solutions and optimizing workflows. Currently pursuing MSc in Advanced Computer Science from the 
+                University of Hertfordshire.
+            </p>
         </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience">
-        <div class="row">
+        <div class="container">
             <h2>Professional Experience</h2>
-            <div>
-                <h3>Software Developer Intern - Tech Grids Limited</h3>
+            <div class="experience-item">
+                <h3>Software Developer Intern</h3>
+                <p>Tech Grids Limited, Altrincham, England, UK</p>
                 <p><em>September 2022 – May 2023</em></p>
                 <ul>
                     <li>Developed backend features using Java and Spring, enhancing project functionalities.</li>
                     <li>Validated 25+ automated tests using Selenium, improving software quality.</li>
+                    <li>Integrated automation testing within CI/CD pipeline, reducing software release time by 30%.</li>
                 </ul>
+                <!-- Placeholder for logo -->
+                <img src="placeholder-techgrids-logo.jpg" alt="Tech Grids Limited" class="organization-logo">
             </div>
-            <div>
-                <h3>Data Science Intern - Wood Group Limited</h3>
+            <div class="experience-item">
+                <h3>Data Science Intern</h3>
+                <p>Wood Group Limited, Aberdeen, Scotland, UK</p>
                 <p><em>September 2023 – May 2024</em></p>
                 <ul>
                     <li>Collected and cleaned datasets, streamlining data preparation for analysis.</li>
                     <li>Created Power BI dashboards for actionable insights.</li>
+                    <li>Collaborated with cross-functional teams using JIRA to ensure project alignment.</li>
                 </ul>
-            </div>
-            <div>
-                <h3>Associate QA Engineer - Open Text Technologies</h3>
-                <p><em>July 2020 – December 2021</em></p>
-                <ul>
-                    <li>Developed over 100 automated test cases using Selenium.</li>
-                    <li>Reduced CI/CD pipeline runtime by 7 hours through optimizations.</li>
-                </ul>
+                <!-- Placeholder for logo -->
+                <img src="placeholder-woodgroup-logo.jpg" alt="Wood Group Limited" class="organization-logo">
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-        <div class="row">
+        <div class="container">
             <h2>Projects</h2>
-            <div>
+            <div class="project-item">
                 <h3>Investigation of Predictive Modeling for Customer Churn</h3>
                 <p>Used Python to analyze telecom data and achieved 99% accuracy in churn predictions using CNN and XGBoost.</p>
+                <!-- Placeholder for project-related image -->
+                <img src="placeholder-project-image1.jpg" alt="Customer Churn Project" class="project-image">
             </div>
-            <div>
+            <div class="project-item">
                 <h3>Chatbot for Natural Conversations</h3>
                 <p>Developed a chatbot using LangChain and OpenAI, optimizing its accuracy with a custom data pipeline.</p>
-            </div>
-            <div>
-                <h3>Files Encryption and Decryption</h3>
-                <p>Built a Python tool with AES encryption and a user-friendly GUI for secure file handling.</p>
+                <!-- Placeholder for project-related image -->
+                <img src="placeholder-project-image2.jpg" alt="Chatbot Project" class="project-image">
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
-        <div class="row">
-            <h2>Technical Skills</h2>
+        <div class="container">
+            <h2>Skills</h2>
             <ul>
                 <li><strong>Languages:</strong> Java, Python, C++, JavaScript, TypeScript</li>
-                <li><strong>Frameworks & Tools:</strong> Spring, JUnit, Selenium, Cucumber</li>
-                <li><strong>Cloud:</strong> Basic knowledge of AWS, Docker, Azure</li>
-                <li><strong>Machine Learning:</strong> TensorFlow, Pandas, NumPy</li>
-                <li><strong>Databases:</strong> MySQL, SSMS</li>
+                <li><strong>Frameworks:</strong> Spring, JUnit, Selenium, Cucumber</li>
+                <li><strong>Databases:</strong> MySQL, SQL Server Management Studio</li>
+                <li><strong>Cloud:</strong> AWS, Docker, Azure</li>
+                <li><strong>Tools:</strong> Power BI, IBM QRadar, ArcSight</li>
             </ul>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <div class="row">
-            <h2>Contact Me</h2>
+        <div class="container">
+            <h2>Contact</h2>
             <p>Email: <a href="mailto:sainath.shivakoti@gmail.com">sainath.shivakoti@gmail.com</a></p>
             <p>Phone: +91 9703702231</p>
             <p>LinkedIn: <a href="https://linkedin.com/in/sainathcharyshivakoti" target="_blank">linkedin.com/in/sainathcharyshivakoti</a></p>
@@ -110,12 +116,10 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Sai Nath Chary Shivakoti. All rights reserved.</p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sai Nath Chary Shivakoti. All Rights Reserved.</p>
+        </div>
     </footer>
-
-    <div class="back-to-top">
-        <a href="#top"><img src="./images/up-arrow.png" alt="Back to top" class="back-to-top__image"></a>
-    </div>
 </body>
 </html>
