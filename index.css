@@ -519,7 +519,7 @@ body:not(.user-is-tabbing) a:focus {
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    overflow-x: scroll; 
+    overflow-x: auto; 
     gap: var(--gutter-medium); 
     padding: var(--gutter-normal);
 }
