@@ -517,29 +517,42 @@ body:not(.user-is-tabbing) a:focus {
 
 .company__logos {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: var(--gutter-medium); 
-    padding: var(--gutter-normal);
+    gap: var(--gutter-medium);
+    overflow: hidden;
+    position: relative;
+    height: 6.5rem;
+}
+
+.marquee {
+    display: flex;
+    animation: marquee 15s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused;
 }
 
 .company__logo {
-    height: 6.5rem; 
-    object-fit: contain; 
-    filter: none; 
-    margin-right: 1rem; 
+    height: 6.5rem;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-right: var(--gutter-medium);
 }
 
-@media(max-width: 1240px) {
-    .company__logos { 
-        overflow-x: scroll; 
-        justify-content: start; 
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
     }
-
-    .company__logo {
-        flex-shrink: 0;
+    100% {
+        transform: translateX(-100%);
     }
 }
+
+.company__logos--reverse .marquee {
+    animation-direction: reverse;
+}
+
 
 /* --------------------------------------- */
 /* ----- About ----- */
