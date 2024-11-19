@@ -518,8 +518,7 @@ body:not(.user-is-tabbing) a:focus {
 .company__logos {
     display: flex;
     justify-content: space-between;
-    align-items: center; 
-    overflow-x: auto; 
+    align-items: center;
     gap: var(--gutter-medium); 
     padding: var(--gutter-normal);
 }
@@ -532,7 +531,8 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 @media(max-width: 1240px) {
-    .company__logos {
+    .company__logos { 
+        overflow-x: scroll; 
         justify-content: start; 
     }
 
