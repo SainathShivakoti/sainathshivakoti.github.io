@@ -77,6 +77,9 @@ body {
     /*background: var(--grey);*/
     background: linear-gradient(rgba(41, 42, 46, .1), rgba(23, 24, 28, .4)), 
     url('./images/header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     overflow-x: hidden;
 }
 
