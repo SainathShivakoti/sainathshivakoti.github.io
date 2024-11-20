@@ -127,7 +127,10 @@ img {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Jost', sans-serif;
     font-weight: 400;
     line-height: var(--line-height-small);
@@ -443,6 +446,95 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
+/* ----- Education ----- */
+/* --------------------------------------- */
+ 
+.education {
+    padding: var(--gutter-large);
+    background: var(--background-light);
+}
+
+/* General timeline container styling */
+.timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* Timeline items */
+.timeline__item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 100px;
+}
+
+/* Connecting line between icons */
+.timeline__item::after {
+    content: '';
+    position: absolute;
+    left: 48px;
+    top: 100px; /* Adjust to connect icons */
+    bottom: -100px; /* Length of the connecting line */
+    width: 2px;
+    background: #ffffff;
+    z-index: 0;
+}
+
+/* Remove line after the last item */
+.timeline__item:last-child::after {
+    display: none;
+}
+
+/* Icon styling */
+.timeline__icon {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background-color: #fff; /* Default background */
+    border: 4px solid #ffffff; /* Match line color */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for icon bubble */
+.timeline__icon:hover {
+    background-color: #fefefe; /* Change to desired highlight color */
+    transform: scale(1.5); /* Slightly enlarge the bubble */
+    border-color: #f1f0ee; /* Optional: match the border with the bubble color */
+}
+
+/* Highlight the logo inside on hover */
+.timeline__icon img {
+    width: 80%;  /*Adjust as needed */
+    height: auto;
+    transition: filter 0.3s ease; /* Smooth transition for the logo effect */
+}
+
+/* Text details styling */
+.timeline__content {
+    background: none;
+    padding: 0;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    text-align: left;
+    line-height: 2.5;
+}
+
+/* Clean up margins for inner text */
+.timeline__content h3,
+.timeline__content p,
+.timeline__content span {
+    margin: 0;
+}
+    
+/* --------------------------------------- */
 /* ----- Work ----- */
 /* --------------------------------------- */
 
@@ -512,7 +604,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- Clients ----- */
+/* ----- Companies ----- */
 /* --------------------------------------- */
 
 .company__logo {
@@ -577,9 +669,13 @@ body:not(.user-is-tabbing) a:focus {
     margin-bottom: var(--gutter-normal);
 }
 
+.about__photo-container img{
+    width: 90%;
+}
+
 @media(min-width: 901px) {
     .about__text {
-        flex: 0 0 35%;
+        flex: 0 0 50%;
     }
     
     .about__photo-container {
