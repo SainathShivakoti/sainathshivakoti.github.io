@@ -11,7 +11,8 @@
     Sai Nath Chary Shivakoti - Portfolio
   </title>
 
-  <meta name="description" content="Sai Nath Chary Shivakoti - Software Engineer with over 3 years of experience in software development, quality assurance, and data analysis. 
+  <meta name="description"
+    content="Sai Nath Chary Shivakoti - Software Engineer with over 3 years of experience in software development, quality assurance, and data analysis. 
   Proficient in Java, Python, and DevOps. Passionate about delivering high-quality solutions and improving system efficiency." />
 
   <meta name="keywords" content="Sai Nath Chary Shivakoti, Software Engineer, Java Developer, Python Developer, DevOps, 
@@ -23,44 +24,48 @@
 
 <body>
 
-  <!-- ***** Header ***** -->
+  <div class="row">
+    <button class="nav__toggle" aria-expanded="false" aria-label="Toggle Navigation">
+      <span class="nav__toggle-icon"></span>
+      <span class="nav__toggle-icon"></span>
+      <span class="nav__toggle-icon"></span>
+    </button>
 
-  <header class="header" role="banner" id="top">
-    <div class="row">
-      <nav class="nav" role="navigation">
-        <ul class="nav__items" id="nav-items">
-          <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
-          <li class="nav__item"><a href="#workexperience" class="nav__link">Professional<br/>Experience</a></li>
-          <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-          <li class="nav__item"><a href="#teaching" class="nav__link">Teaching &<br/>Research Experience</a></li>
-          <li class="nav__item"><a href="#certifications" class="nav__link">Certifications</a></li>
-          <li class="nav__item">
-            <a href="#about" class="nav__link">About</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="header__text-box row">
-      <div class="header__text">
-        <h1 class="heading-primary">
-          <!-- Replace the following name with your name -->
-          <span>Sai Nath Chary Shivakoti</span>
-        </h1>
-        <!-- Put a small paragraph about yourself -->
-        <p>
-          Software Engineer passionate about creating innovative solutions and enhancing system efficiency.  
-          Experienced in software development, quality assurance, and data analysis, with a proven track record of delivering results.  
-          Ready to contribute to meaningful projects and explore exciting opportunities—let’s connect!
-        </p>                
-        <a href="#contact" class="btn btn--blue">Get in touch</a>
+
+    <nav class="nav" role="navigation" aria-label="Main Navigation" id="top">
+      <ul class="nav__items" id="nav-items">
+        <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
+        <li class="nav__item"><a href="#workexperience" class="nav__link">Professional<br />Experience</a></li>
+        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+        <li class="nav__item"><a href="#teaching" class="nav__link">Teaching &<br />Research Experience</a></li>
+        <li class="nav__item"><a href="#certifications" class="nav__link">Certifications</a></li>
+        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main role="main" class="content">
+    <!-- ***** Header ***** -->
+
+    <header class="header" role="banner">
+      <div class="header__text-box row">
+        <div class="header__text">
+          <h1 class="heading-primary">
+            <!-- Replace the following name with your name -->
+            <span>Sai Nath Chary Shivakoti</span>
+          </h1>
+          <!-- Put a small paragraph about yourself -->
+          <p>
+            Software Engineer passionate about creating innovative solutions and enhancing system efficiency.
+            Experienced in software development, quality assurance, and data analysis, with a proven track record of
+            delivering results.
+            Ready to contribute to meaningful projects and explore exciting opportunities—let’s connect!
+          </p>
+          <a href="#contact" class="btn btn--blue">Get in touch</a>
+        </div>
       </div>
-    </div>
-  </header>
-
-  <main role="main">
+    </header>
 
     <!-- ***** Education ***** -->
 
@@ -71,11 +76,13 @@
           <!-- Education Item 1 -->
           <div class="timeline__item">
             <div class="timeline__icon">
-              <img src="./images/hertslogo.png" alt="University of Hertfordshire Logo"/>
+              <img src="./images/hertslogo.png" alt="University of Hertfordshire Logo" />
             </div>
             <div class="timeline__content">
-              <a href="https://www.herts.ac.uk/" title="Redirect to University of Hertfordshire Website" target="_blank">
-                <h3 class="uni__link">University of Hertfordshire&hairsp;<img src="./images/linkicon.svg"/></h3>
+              <a href="https://www.herts.ac.uk/" title="Redirect to University of Hertfordshire Website"
+                target="_blank">
+                <h3 class="uni__link">University of Hertfordshire&hairsp;<img src="./images/linkicon.svg" /
+                    alt="External Link"></h3>
               </a>
               <p>Master of Science (MSc)</p>
               <p>Advanced Computer Science</p>
@@ -83,15 +90,16 @@
               <span>January 2022 - February 2024</span>
             </div>
           </div>
-    
+
           <!-- Education Item 2 -->
           <div class="timeline__item">
             <div class="timeline__icon">
-              <img src="./images/mreclogo.png" alt="MREC Logo"/>
+              <img src="./images/mreclogo.png" alt="MREC Logo" />
             </div>
             <div class="timeline__content">
               <a href="https://mrec.ac.in/" title="Redirect to MREC Website" target="_blank">
-                <h3 class="uni__link">Malla Reddy Engineering College&hairsp;<img src="./images/linkicon.svg"/></h3>
+                <h3 class="uni__link">Malla Reddy Engineering College&hairsp;<img src="./images/linkicon.svg"
+                    alt="External Link" /></h3>
               </a>
               <p>Bachelor of Technology (B.Tech)</p>
               <p>Computer Science and Engineering</p>
@@ -101,8 +109,8 @@
           </div>
         </div>
       </div>
-    </section>          
-    
+    </section>
+
     <!-- ***** Companies ***** -->
 
     <section class="company" id="companies">
@@ -110,7 +118,7 @@
         <h2>Companies</h2>
         <div class="company__logos">
           <div class="marquee">
-          <!-- Add logos of the clients or companies you'have worked with. -->
+            <!-- Add logos of the clients or companies you'have worked with. -->
             <img src="./images/wood.png" class="company__logo" alt="Wood plc" />
             <img src="./images/techgrids.png" class="company__logo" alt="Tech Grids UK" />
             <img src="./images/opentext.png" class="company__logo" alt="Open Text Technologies India Pvt. Ltd." />
@@ -126,8 +134,8 @@
     <section class="workexperience" id="workexperience">
       <div class="row">
         <h2>Professional Experience</h2>
-        
-        </div>
+
+      </div>
       </div>
     </section>
 
@@ -137,9 +145,9 @@
       <div class="row">
         <h2>Projects</h2>
         <div class="work__boxes">
-    
-        <!-- Each div with the work__box class is a project. -->
-    
+
+          <!-- Each div with the work__box class is a project. -->
+
           <div class="work__box">
             <div class="work__text">
               <h3>Portfolio Template</h3>
@@ -152,7 +160,7 @@
                 <li>JavaScript</li>
                 <li>Parcel</li>
               </ul>
-    
+
               <div class="work__links">
                 <a href="https://nisar.surge.sh" target="_blank" class="link__text">
                   Visit Site <span>&rarr;</span>
@@ -166,7 +174,7 @@
               <img src="./images/project-1.png" class="work__image" alt="Project 1" />
             </div>
           </div>
-    
+
           <div class="work__box">
             <div class="work__text">
               <h3>Calculator</h3>
@@ -180,7 +188,7 @@
                 <li>Node</li>
                 <li>MongoDB</li>
               </ul>
-    
+
               <div class="work__links">
                 <a href="#" class="link__text">
                   Visit Site <span>&rarr;</span>
@@ -194,7 +202,7 @@
               <img src="./images/project-2.png" class="work__image" alt="Project 1" />
             </div>
           </div>
-    
+
           <div class="work__box">
             <div class="work__text">
               <h3>Notificator</h3>
@@ -208,7 +216,7 @@
                 <li>Node</li>
                 <li>MongoDB</li>
               </ul>
-    
+
               <div class="work__links">
                 <a href="#" class="link__text">
                   Visit Site <span>&rarr;</span>
@@ -231,8 +239,8 @@
     <section class="teaching" id="teaching">
       <div class="row">
         <h2>Teaching & Research Experience</h2>
-        
-        </div>
+
+      </div>
       </div>
     </section>
 
@@ -241,8 +249,8 @@
     <section class="certifications" id="certifications">
       <div class="row">
         <h2>Certifications</h2>
-        
-        </div>
+
+      </div>
       </div>
     </section>
 
@@ -255,44 +263,51 @@
           <div class="about__text">
             <!-- Replace the below paragraph with info about yourself -->
             <p>
-              I am a dedicated Software Engineer with over three years of experience in developing reliable and efficient software solutions. 
-              Beyond coding, I am deeply fascinated by Machine Learning, Artificial Intelligence, and Human-Computer Interaction, constantly exploring how technology can bridge gaps and improve lives. 
-              In my free time, I enjoy playing cricket, experimenting with new recipes, and having lively discussions about science fiction and theories surrounding Marvel movies. 
-              These passions fuel my curiosity and inspire innovative thinking in both my personal and professional endeavors.  
-            </p>            
+              I am a dedicated Software Engineer with over three years of experience in developing reliable and
+              efficient software solutions.
+              Beyond coding, I am deeply fascinated by Machine Learning, Artificial Intelligence, and Human-Computer
+              Interaction, constantly exploring how technology can bridge gaps and improve lives.
+              In my free time, I enjoy playing cricket, experimenting with new recipes, and having lively discussions
+              about science fiction and theories surrounding Marvel movies.
+              These passions fuel my curiosity and inspire innovative thinking in both my personal and professional
+              endeavors.
+            </p>
             <!-- Provide a link to your resume -->
             <a href="./Sai_Nath_Chary_Shivakoti_Resume.pdf" class="btn">My Resume</a>
           </div>
 
           <div class="about__photo-container">
             <!-- Add a nice photo of yourself -->
-            <img class="about__photo" src="./images/sainathshivakoti.JPG" alt="Sai Nath Chary Shivakoti"/>
+            <img class="about__photo" src="./images/sainathshivakoti.JPG" alt="Sai Nath Chary Shivakoti" />
           </div>
         </div>
       </div>
     </section>
-  </main>
 
-  <!-- ***** Contact ***** -->
+    <!-- ***** Contact ***** -->
 
-  <section class="contact" id="contact">
-    <div class="row">
-      <h2>Get in Touch</h2>
-      <div class="contact__info">
-        <p>
-          I am always open to discussing new opportunities, collaborative projects, or any inquiries related to software development, 
-          data analysis, or quality assurance. If you have any questions or would like to connect, feel free to reach out. 
-          I will respond at the earliest convenience.
-        </p>
-        <!-- Replace the email with yours -->
-        <a href="mailto:sainath.shivakoti@gmail.com" class="btn">Email me</a>
+    <section class="contact content" id="contact">
+      <div class="row">
+        <h2>Get in Touch</h2>
+        <div class="contact__info">
+          <p>
+            I am always open to discussing new opportunities, collaborative projects, or any inquiries related to
+            software development,
+            data analysis, or quality assurance. If you have any questions or would like to connect, feel free to reach
+            out.
+            I will respond at the earliest convenience.
+          </p>
+          <!-- Replace the email with yours -->
+          <a href="mailto:sainath.shivakoti@gmail.com" class="btn">Email me</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <!-- ***** Footer ***** -->
 
-  <footer role="contentinfo" class="footer">
+  <footer role="contentinfo" class="footer content">
     <div class="row">
       <!-- Update the links to point to your accounts -->
       <ul class="footer__social-links">
@@ -326,7 +341,7 @@
   </footer>
 
   <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
+    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image" />
   </a>
   <script src="./index.js"></script>
 </body>

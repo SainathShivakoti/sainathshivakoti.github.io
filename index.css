@@ -44,7 +44,7 @@
 
     --container-max-width: 1180px;
     --container-normal-width: 800px;
-    --container-medium-width: 700px; 
+    --container-medium-width: 700px;
     --container-small-width: 500px;
 
     --gutter-huge: 12rem;
@@ -57,7 +57,8 @@
 }
 
 html {
-    font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
+    font-size: 62.5%;
+    /* (16/10)*100 = 62.5% => 1rem = 10px */
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -74,8 +75,8 @@ body {
     font-weight: 400;
     color: var(--white-1);
     line-height: var(--line-height-normal);
-    background: linear-gradient(rgba(41, 42, 46, .1), rgba(23, 24, 28, .4)), 
-    url('./images/header.jpg');
+    background: linear-gradient(rgba(41, 42, 46, .1), rgba(23, 24, 28, .4)),
+        url('./images/header.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -187,7 +188,7 @@ p {
 }
 
 @media(max-width: 900px) {
-    p { 
+    p {
         max-width: var(--container-small-width);
     }
 }
@@ -228,7 +229,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: 1rem 4.2rem;
     text-decoration: none;
     color: inherit;
-    border: 1px solid  var(--blue);
+    border: 1px solid var(--blue);
     font-weight: 400;
 }
 
@@ -344,12 +345,14 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Navigation ----- */
 /* --------------------------------------- */
 
+/* Base styles */
 .nav {
     display: flex;
     justify-content: flex-end;
     padding: var(--gutter-normal) 0;
     width: 100%;
     box-sizing: border-box;
+    font-size: var(--font-size-normal);
 }
 
 .nav__items {
@@ -363,24 +366,6 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav__item:not(:last-child) {
     margin-right: var(--gutter-medium);
-}
-
-@media (max-width: 500px) {
-    .nav {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 400px) {
-    .nav__item:not(:last-child) {
-        margin-right: var(--gutter-normal);
-    }
-}
-
-@media (max-width: 300px) {
-    .nav {
-        font-size: var(--font-size-small);
-    }
 }
 
 .nav__link {
@@ -414,12 +399,145 @@ body:not(.user-is-tabbing) a:focus {
     background: var(--blue);
 }
 
+/* Hamburger menu button */
+.nav__toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    /* Ensure it stays above other content */
+    background: inherit;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav__toggle-icon {
+    display: none;
+    width: 3rem;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav__toggle-icon::before,
+.nav__toggle-icon::after {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 3px;
+    background: var(--primary-color);
+    transition: 0.3s ease;
+}
+
+.nav__toggle.is-active .nav__toggle-icon:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav__toggle.is-active .nav__toggle-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.nav__toggle.is-active .nav__toggle-icon:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* Mobile menu as a topbar */
+@media (max-width: 900px) {
+    .nav {
+        flex-direction: row;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: fit-content;
+        width: fit-content;
+        /* Adjust topbar width */
+        background: url('./images/header.jpg');
+        background-color: url('./images/header.jpg');
+        /* Topbar background color */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.662);
+        /* Optional shadow */
+        transform: translateY(-100%);
+        /* Initially hidden off-screen */
+        transition: transform 0.3s ease;
+        /* Smooth slide-in effect */
+        z-index: 1000;
+        flex-wrap: wrap;
+        font-size: var(--gutter-small);
+    }
+
+    .nav.is-active {
+        transform: translateY(0);
+        /* Slide into view */
+    }
+
+    .nav__items {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: var(--gutter-small);
+        height: fit-content;
+        width: fit-content;
+        font-size: var(--gutter-small);
+        gap: 1.5rem;
+        justify-content: initial;
+    }
+
+    .nav__item:not(:last-child) {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .nav__link {
+        padding: 1rem;
+    }
+
+    /* Content adjustment when menu is expanded */
+    .content {
+        margin-top: 1;
+        /* Default state */
+        transition: margin-top 0.3s ease;
+    }
+
+    .content.menu-expanded {
+        margin-top: var(--menu-height);
+        padding-top: 30rem;
+        /* Adjusted based on topbar height */
+    }
+
+    .nav__toggle {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        z-index: 1001;
+    }
+
+    .nav__toggle-icon {
+        display: block;
+    }
+
+    .nav__toggle[aria-expanded="true"] .nav__toggle-icon:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav__toggle[aria-expanded="true"] .nav__toggle-icon:nth-child(2) {
+        opacity: 0;
+        background-color: transparent;
+    }
+
+    .nav__toggle[aria-expanded="true"] .nav__toggle-icon:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
 /* --------------------------------------- */
 /* ----- Header ----- */
 /* --------------------------------------- */
 
 .header {
-    background: linear-gradient(rgba(41, 42, 46, 0.1), rgba(23, 24, 28, 0.2)), 
+    background: linear-gradient(rgba(41, 42, 46, 0.1), rgba(23, 24, 28, 0.2)),
         url('./images/header.jpg');
     height: 100vh;
     background-size: cover;
@@ -430,7 +548,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .header__text {
     position: absolute;
-    top: 55%;
+    top: 60%;
     transform: translateY(-50%);
 }
 
@@ -441,20 +559,33 @@ body:not(.user-is-tabbing) a:focus {
     font-size: var(--font-size-medium);
 }
 
-@media(max-width: 500px) {
+@media (max-width: 768px) {
     .header {
+        flex-direction: row;
+        height: auto;
+        /* Allow content to determine height */
+        padding: var(--gutter-medium);
+        /* Add padding */
         text-align: center;
     }
 
+    .header__text {
+        top: auto;
+        position: static;
+        /* Let it flow naturally in smaller screens */
+        transform: none;
+        margin-top: var(--gutter-medium);
+    }
+
     .header__text p {
-        transform: scale(.8);
+        font-size: var(--font-size-small);
     }
 }
 
 /* --------------------------------------- */
 /* ----- Education ----- */
 /* --------------------------------------- */
- 
+
 .education {
     padding: var(--gutter-large);
     background: var(--background-light);
@@ -481,8 +612,10 @@ body:not(.user-is-tabbing) a:focus {
     content: '';
     position: absolute;
     left: 48px;
-    top: 100px; /* Adjust to connect icons */
-    bottom: -100px; /* Length of the connecting line */
+    top: 100px;
+    /* Adjust to connect icons */
+    bottom: -100px;
+    /* Length of the connecting line */
     width: 2px;
     background: #ffffff;
     z-index: 0;
@@ -498,28 +631,36 @@ body:not(.user-is-tabbing) a:focus {
     flex-shrink: 0;
     width: 100px;
     height: 100px;
-    background-color: #fff; /* Default background */
-    border: 4px solid #ffffff; /* Match line color */
+    background-color: #fff;
+    /* Default background */
+    border: 4px solid #ffffff;
+    /* Match line color */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 40px;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Smooth transition */
 }
 
 /* Hover effect for icon bubble */
 .timeline__icon:hover {
-    background-color: #fefefe; /* Change to desired highlight color */
-    transform: scale(1.5); /* Slightly enlarge the bubble */
-    border-color: #f1f0ee; /* Optional: match the border with the bubble color */
+    background-color: #fefefe;
+    /* Change to desired highlight color */
+    transform: scale(1.5);
+    /* Slightly enlarge the bubble */
+    border-color: #f1f0ee;
+    /* Optional: match the border with the bubble color */
 }
 
 /* Highlight the logo inside on hover */
 .timeline__icon img {
-    width: 80%;  /*Adjust as needed */
+    width: 80%;
+    /*Adjust as needed */
     height: auto;
-    transition: filter 0.3s ease; /* Smooth transition for the logo effect */
+    transition: filter 0.3s ease;
+    /* Smooth transition for the logo effect */
 }
 
 /* Text details styling */
@@ -533,19 +674,9 @@ body:not(.user-is-tabbing) a:focus {
     line-height: 2.5;
 }
 
-.timeline__content a{
+.timeline__content a {
     text-decoration: none;
 }
-
-/* .timeline__content h3:hover{
-    color: var(--blue);
-}
-
-.timeline__content h3:hover::after{
-    right: 0;
-    height: 2px;
-    background: var(--blue);
-} */
 
 .uni__link {
     position: relative;
@@ -587,7 +718,43 @@ body:not(.user-is-tabbing) a:focus {
 .timeline__content span {
     margin: 0;
 }
-    
+
+@media (max-width: 900px) {
+    .education {
+        padding: var(--gutter-normal);
+        /* Reduce padding */
+    }
+
+    .timeline {
+        padding-left: 0;
+    }
+
+    .timeline__item {
+        flex-direction: row;
+        /* Stack the icon and content vertically */
+        align-items: initial;
+        text-align: initial;
+    }
+
+    .timeline__icon {
+        margin: 0 0 var(--gutter-small);
+    }
+
+    .timeline__item::after {
+        left: 10;
+        /* Center the connecting line */
+        top: 0;
+        bottom: -50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline__content {
+        margin-left: 1.5rem;
+        text-align: inherit;
+        overflow-wrap: break-word;
+    }
+}
+
 /* --------------------------------------- */
 /* ----- Work ----- */
 /* --------------------------------------- */
@@ -681,19 +848,13 @@ body:not(.user-is-tabbing) a:focus {
     animation-play-state: paused;
 }
 
-.company__logo {
-    height: 6.5rem;
-    object-fit: contain;
-    flex-shrink: 0;
-    margin-right: var(--gutter-medium);
-}
-
 @keyframes marquee {
     0% {
-        transform: translateX(0);
+        transform: translateX(150%);
     }
+
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-150%);
     }
 }
 
@@ -701,6 +862,52 @@ body:not(.user-is-tabbing) a:focus {
     animation-direction: reverse;
 }
 
+/* Mobile adjustments */
+@media (max-width: 900px) {
+    /* Scale down the logo size */
+    .company__logo {
+        height: 5.5rem; /* Smaller logo height */
+        margin-right: var(--gutter-medium); /* Reduce spacing between logos */
+    }
+
+    /* Adjust marquee container to allow wrapping */
+    .marquee {
+        animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(150%);
+        }
+    
+        100% {
+            transform: translateX(-200%);
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    /* Additional scaling for very small screens */
+    .company__logo {
+        height: 4.5rem; /* Further reduce size for narrow screens */
+        padding: 0.5rem; /* Reduce padding */
+        margin-right: var(--gutter-medium)
+    }
+
+    .marquee {
+        animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(150%);
+        }
+    
+        100% {
+            transform: translateX(-250%);
+        }
+    }
+}
 
 /* --------------------------------------- */
 /* ----- About ----- */
@@ -723,7 +930,7 @@ body:not(.user-is-tabbing) a:focus {
     margin-bottom: var(--gutter-normal);
 }
 
-.about__photo-container img{
+.about__photo-container img {
     width: 90%;
 }
 
@@ -731,7 +938,7 @@ body:not(.user-is-tabbing) a:focus {
     .about__text {
         flex: 0 0 50%;
     }
-    
+
     .about__photo-container {
         flex: 1;
         margin: 0 var(--gutter-huge) 0 0;
@@ -784,5 +991,5 @@ body:not(.user-is-tabbing) a:focus {
 @media(max-width: 500px) {
     .footer {
         padding: var(--gutter-medium) 0;
-    } 
+    }
 }
