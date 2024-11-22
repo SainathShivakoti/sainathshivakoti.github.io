@@ -456,7 +456,8 @@ body:not(.user-is-tabbing) a:focus {
         width: fit-content;
         /* Adjust topbar width */
         background: url('./images/header.jpg');
-        background-color: url('./images/header.jpg');
+        background-color: linear-gradient(rgba(41, 42, 46, .1), rgba(23, 24, 28, .4)),
+        url('./images/header.jpg');;
         /* Topbar background color */
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.662);
         /* Optional shadow */
