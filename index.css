@@ -636,13 +636,18 @@ body:not(.user-is-tabbing) a:focus {
     content: '';
     position: absolute;
     left: 48px;
-    top: 100px;
+    top: 45%;
     /* Adjust to connect icons */
-    bottom: -100px;
+    height: calc(100% + 100px);
     /* Length of the connecting line */
     width: 2px;
     background: #ffffff;
     z-index: 0;
+}
+
+.timeline__item:first-child::after {
+    top: 45%; /* Line starts at the bottom */
+    height: calc(100% + 50px); /* Adjust length if needed */
 }
 
 /* Remove line after the last item */
@@ -672,7 +677,7 @@ body:not(.user-is-tabbing) a:focus {
 .timeline__icon:hover {
     background-color: #fefefe;
     /* Change to desired highlight color */
-    transform: scale(1.5);
+    transform: scale(1.2);
     /* Slightly enlarge the bubble */
     border-color: #f1f0ee;
     /* Optional: match the border with the bubble color */
