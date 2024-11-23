@@ -457,7 +457,7 @@ body:not(.user-is-tabbing) a:focus {
         /* Adjust topbar width */
         background: url('./images/header.jpg');
         background-color: linear-gradient(rgba(41, 42, 46, .1), rgba(23, 24, 28, .4)),
-        url('./images/header.jpg');;
+            url('./images/header.jpg');
         /* Topbar background color */
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.662);
         /* Optional shadow */
@@ -530,6 +530,25 @@ body:not(.user-is-tabbing) a:focus {
 
     .nav__toggle[aria-expanded="true"] .nav__toggle-icon:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+.logo-container {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    margin: -15rem 1rem 0;
+}
+
+@media (max-width: 900px) {
+    .logo-container {
+        height: 100px;
+        width: 100px;
+        margin: -2rem 1rem 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -865,10 +884,13 @@ body:not(.user-is-tabbing) a:focus {
 
 /* Mobile adjustments */
 @media (max-width: 900px) {
+
     /* Scale down the logo size */
     .company__logo {
-        height: 5.5rem; /* Smaller logo height */
-        margin-right: var(--gutter-medium); /* Reduce spacing between logos */
+        height: 5.5rem;
+        /* Smaller logo height */
+        margin-right: var(--gutter-medium);
+        /* Reduce spacing between logos */
     }
 
     /* Adjust marquee container to allow wrapping */
@@ -880,7 +902,7 @@ body:not(.user-is-tabbing) a:focus {
         0% {
             transform: translateX(150%);
         }
-    
+
         100% {
             transform: translateX(-200%);
         }
@@ -888,10 +910,13 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 @media (max-width: 600px) {
+
     /* Additional scaling for very small screens */
     .company__logo {
-        height: 4.5rem; /* Further reduce size for narrow screens */
-        padding: 0.5rem; /* Reduce padding */
+        height: 4.5rem;
+        /* Further reduce size for narrow screens */
+        padding: 0.5rem;
+        /* Reduce padding */
         margin-right: var(--gutter-medium)
     }
 
@@ -903,7 +928,7 @@ body:not(.user-is-tabbing) a:focus {
         0% {
             transform: translateX(150%);
         }
-    
+
         100% {
             transform: translateX(-250%);
         }
