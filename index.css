@@ -538,6 +538,7 @@ body:not(.user-is-tabbing) a:focus {
     position: absolute;
     height: 150px;
     width: 150px;
+    left: 85%;
     margin: -15rem 1rem 0;
 }
 
