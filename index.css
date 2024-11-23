@@ -97,18 +97,21 @@ body {
 @media(max-width: 1240px) {
     .row {
         padding: 0 var(--gutter-medium);
+        overflow-x: hidden;
     }
 }
 
-@media(max-width: 600px) {
+@media(max-width: 900px) {
     .row {
         padding: 0 var(--gutter-normal);
+        overflow-x: hidden;
     }
 }
 
 @media(max-width: 600px) {
     .row {
         padding: 0 var(--gutter-small);
+        overflow-x: hidden;
     }
 }
 
