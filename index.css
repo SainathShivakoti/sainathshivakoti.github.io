@@ -23,6 +23,7 @@
 }
 
 :root {
+    --font-size-xsmall: 1.5rem;
     --font-size-small: 1.8rem;
     --font-size-normal: 2.2rem;
     --font-size-medium: 2.8rem;
@@ -172,6 +173,16 @@ h3 {
     margin-bottom: var(--gutter-small);
 }
 
+h4 {
+    font-size: var(--font-size-normal);
+    margin-bottom: var(--gutter-small);
+}
+
+h5 {
+    font-size: var(--font-size-small);
+    margin-bottom: var(--gutter-small);
+}
+
 @media(max-width: 500px) {
     .heading-primary {
         font-size: var(--font-size-large);
@@ -183,6 +194,14 @@ h3 {
 
     h3 {
         font-size: var(--font-size-medium);
+    }
+
+    h4 {
+        font-size: var(--font-size-small);
+    }
+
+    h5 {
+        font-size: var(--font-size-xsmall);
     }
 }
 
@@ -646,8 +665,10 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .timeline__item:first-child::after {
-    top: 45%; /* Line starts at the bottom */
-    height: calc(100% + 50px); /* Adjust length if needed */
+    top: 45%;
+    /* Line starts at the bottom */
+    height: calc(100% + 50px);
+    /* Adjust length if needed */
 }
 
 /* Remove line after the last item */
@@ -781,6 +802,213 @@ body:not(.user-is-tabbing) a:focus {
         margin-left: 1.5rem;
         text-align: inherit;
         overflow-wrap: break-word;
+    }
+}
+
+/* --------------------------------------- */
+/* ------- Professional Experience ------- */
+/* --------------------------------------- */
+
+/* General Styles */
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 0;
+    max-width: 100%;
+    margin: auto;
+}
+
+.experience {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.work__content {
+    max-width: 80%;
+    font-size: 16px;
+    background: inherit;
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: #f0e9f2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.work__timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 75px;
+    position: relative;
+}
+
+.work__timeline .start,
+.work__timeline .end {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f9f6f6;
+}
+
+.work__timeline .start {
+    margin-top: 5px;
+}
+
+.work__timeline .end {
+    margin-bottom: 5px;
+}
+
+.work__timeline::before,
+.work__timeline::after {
+    content: "";
+    font-size: 16px;
+    position: absolute;
+}
+
+.work__timeline::before {
+    top: 0;
+    transform: translateY(-50%);
+}
+
+.work__timeline::after {
+    bottom: 0;
+    transform: translateY(50%);
+}
+
+.left {
+    flex-direction: row;
+}
+
+.right {
+    flex-direction: row-reverse;
+}
+
+.work__content h3 img {
+    height: 2.75rem;
+    margin-left: -3.3rem;
+}
+
+.work__content h4 img {
+    height: 2.5rem;
+    margin-left: -3rem;
+
+}
+
+.work__content h5 img {
+    height: 2.25rem;
+    margin-left: -2.75rem;
+}
+
+/* Base line */
+.work__timeline .line {
+    width: 5px;
+    /* Narrow vertical line */
+    background-color: #34bbdc;
+    /* Base color for the line */
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    /* Keep the light dot confined to the line */
+}
+
+/* Light dot animation pseudo-element */
+.work__timeline .line::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    /* Circle diameter */
+    height: 20px;
+    /* Circle diameter */
+    background-color: #f40808f5;
+    /* Dot color */
+    border-radius: 100%;
+    /* Makes the dot circular */
+    box-shadow: 0 0 8px 4px #edededdd;
+    /* Glowing effect around the dot */
+    left: 50%;
+    /* Horizontally center the dot on the line */
+    transform: translateX(-50%);
+    /* Correct centering */
+    bottom: 0;
+    /* Start at the bottom */
+    animation: move-light-dot 3s infinite ease-in-out;
+    /* Dot animation */
+}
+
+/* Keyframes for moving the light dot */
+@keyframes move-light-dot {
+    0% {
+        bottom: -20%;
+        /* Start at the bottom */
+    }
+
+    100% {
+        bottom: 100%;
+        /* Move to the top */
+    }
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+    .experience {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .left {
+        flex-direction: row;
+    }
+
+    .right {
+        flex-direction: row-reverse;
+    }
+
+    .work__timeline {
+        flex-direction: column;
+        align-items: center;
+        width: 75px;
+        position: inherit;
+        padding: var(--gutter-small);
+        padding-top: 6rem;
+    }
+
+    .work__timeline .line {
+        position: inherit;
+        width: 3px;
+        /* Maintain vertical orientation */
+        height: 100px;
+        /* Line will stretch dynamically */
+    }
+
+    .work__content {
+        max-width: 80%;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .work__timeline .start,
+    .work__timeline .end {
+        position: inherit;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .work__content h3 img {
+        height: 2.5rem;
+        margin-left: -3.3rem;
+    }
+
+    .work__content h4 img {
+        height: 2.25rem;
+        margin-left: -3rem;
+
+    }
+
+    .work__content h5 img {
+        height: 2.0rem;
+        margin-left: -2.75rem;
     }
 }
 
