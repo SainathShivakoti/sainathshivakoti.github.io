@@ -1113,6 +1113,83 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
+/* --------------- Skills ---------------- */
+/* --------------------------------------- */
+
+/* ----- Skills Section ----- */
+.skills {
+    background-color: inherit;
+}
+
+.skills-word-map {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gutter-normal);
+    width: 100%;
+    max-width: var(--container-max-width);
+}
+
+.word-map__category {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: var(--gutter-medium);
+}
+
+.word-map__category h3 {
+    text-decoration: underline;
+    text-decoration-color: var(--blue);
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--gutter-normal);
+    font-weight: 300;
+}
+
+.word-map__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gutter-small);
+}
+
+.word-map__item {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: inherit;
+    color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 251, 255, 0.7);
+    font-size: var(--font-size-small);
+    font-weight: 200;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.word-map__item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.8);
+    background-color: var(--blue);
+    font-weight: bolder;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .skills-word-map {
+        gap: var(--gutter-small);
+    }
+
+    .word-map__category {
+        max-width: 100%;
+    }
+
+    .word-map__item {
+        font-size: var(--font-size-xsmall);
+    }
+}
+
+/* --------------------------------------- */
 /* ----- Companies ----- */
 /* --------------------------------------- */
 
